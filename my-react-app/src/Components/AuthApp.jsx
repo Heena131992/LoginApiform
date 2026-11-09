@@ -7,6 +7,9 @@ import {
 } from 'firebase/auth';
 import { auth } from '../Firebase';
 
+// Testing ke liye localhost, deploy karne par apna live Dashboard URL yahan daalein
+const DASHBOARD_URL = "https://bookdashboard-coral.vercel.app";
+
 export default function AuthApp({ onSwitchToSignUp }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,12 +20,17 @@ export default function AuthApp({ onSwitchToSignUp }) {
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
+      setLoading(true);
       const result = await signInWithPopup(auth, provider);
       console.log("Google User:", result.user);
-      alert(`Google Login Successful: ${result.user.displayName || result.user.email}`);
+      
+      // Dashboard ko auth flag ke sath redirect karein
+      window.location.href = `${DASHBOARD_URL}?auth=true`;
     } catch (error) {
       console.error("Google Auth Error:", error.message);
       alert("Google Sign-In Failed: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -34,7 +42,9 @@ export default function AuthApp({ onSwitchToSignUp }) {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Logged In User:", userCredential.user);
-      alert("Login Successful: " + userCredential.user.email);
+      
+      // Dashboard ko auth flag ke sath redirect karein
+      window.location.href = `${DASHBOARD_URL}?auth=true`;
     } catch (error) {
       console.error("SignIn Error:", error.message);
       alert("Login Failed: " + error.message);
@@ -70,6 +80,7 @@ export default function AuthApp({ onSwitchToSignUp }) {
         type="button" 
         className="google-btn" 
         onClick={handleGoogleSignIn}
+        disabled={loading}
       >
         <svg className="google-svg" viewBox="0 0 24 24">
           <path
