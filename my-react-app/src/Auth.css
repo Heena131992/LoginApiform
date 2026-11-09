@@ -1,0 +1,217 @@
+.auth-wrapper{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f4f9; /* Halka grey background */
+  font-family: sans-serif;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.auth-card{
+ width: 100%;
+ max-width: 420px;
+ background-color: #ffffff;
+ border-radius: 12px;
+ padding: 32px 28px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+ box-sizing: border-box;
+
+}
+.tabs-header{
+  display: flex;
+  border-bottom: 1.5px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+/* Common Tab Button Style */
+.tab-btn{
+  flex: 1;
+  background: transparent;
+  font-weight: 600;
+  border: none;
+  padding-bottom: 3px;
+  font-size: 15px;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.tab-btn.active {
+  color: #1a73e8;
+  border-bottom: 2.5px solid #1a73e8;
+}
+
+.tab-btn.active {
+  color: #1a73e8;
+  border-bottom: 2.5px solid #1a73e8;
+}
+
+.auth-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+  padding-top: 22px;
+}
+
+.auth-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Google Button */
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.google-btn:hover {
+  background-color: #f9fafb;
+  border-color: #cbd5e1;
+}
+.google-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+/* OR Divider */
+.divider-row {
+  display: flex;
+  align-items: center;
+  margin: 22px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+.divider-text {
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+}
+
+/* Form Layout */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Naya code (Text starting/left se shuru hoga): */
+.form-group {
+  margin-bottom: 16px;
+  text-align: left; /* Center hata kar left karein */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  text-align: left; /* Label ko starting point par rakhne ke liye */
+}
+
+/* Input Box Styling */
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+/* Typing / Focus State */
+.form-group input:focus {
+  background-color: #ffffff;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+/* Blue Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1557bf;
+}
+/* Password wrapper box ko relative banana */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Input ke andar right side thodi jagah chhodna taaki text icon ke niche na dabe */
+.password-input-wrapper input {
+  padding-right: 42px !important;
+}
+
+/* Eye Toggle Button */
+.eye-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  outline: none;
+}
+
+.eye-toggle-btn:hover {
+  color: #111827;
+}
+
+.eye-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
